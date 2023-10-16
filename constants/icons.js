@@ -10,6 +10,7 @@ import chevronLeft from '../assets/icons/chevron-left.png'
 import chevronRight from '../assets/icons/chevron-right.png'
 import filter64 from '../assets/icons/filter64.png';
 import gift100 from '../assets/icons/gift100.png';
+import account100 from '../assets/icons/account100.png';
 
 export default {
   heart,
@@ -23,5 +24,6 @@ export default {
   chevronLeft,
   chevronRight,
   filter64,
-  gift100
+  gift100,
+  account100
 };
