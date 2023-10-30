@@ -2,7 +2,8 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 
 import styles from "./todaysmenucard.style";
 
-const TodaysMenuCard = () => {
+const TodaysMenuCard = (props) => {
+  const { foodName, restaurantName, restaurantAddress } = props;
   return (
     <TouchableOpacity style={styles.container}>
       <TouchableOpacity style={styles.logoContainer}>
@@ -15,11 +16,11 @@ const TodaysMenuCard = () => {
 
       <View style={styles.textContainer}>
         <Text style={styles.foodName} numberOfLines={1}>
-          Chicken Biryani
+          {foodName}
         </Text>
 
-        <Text style={styles.restaurantName}>Kanak Indian Restaurant</Text>
-        <Text style={styles.restaurantLocation}>Morning star mall, 2nd floor</Text>
+        <Text style={styles.restaurantName}>{restaurantName}</Text>
+        <Text style={styles.restaurantLocation}>{restaurantAddress}</Text>
       </View>
     </TouchableOpacity>
   );

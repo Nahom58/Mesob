@@ -41,15 +41,12 @@ function MainContainer() {
                 return <Ionicons name={iconName} size={size} color={color} />
             },
             tabBarStyle: { height: 90 },
-        })}
-        tabBarOptions={{
-            activeTintColor: 'crimson',
-            inactiveTintColor: 'gray',
-            labelStyle : {
-                paddingBottom: 10,
+            tabBarActiveTintColor: "crimson",
+            tabBarInactiveTintColor: "gray",
+            tabBarLabelStyle: {
+                "paddingBottom": 10
             }
-        }}
-        
+        })}
         >
             <Tab.Screen name={homeScreenName} component={HomeScreen} />
             <Tab.Screen name={pastOrdersScreenName} component={PastOrdersScreen} />
