@@ -61,6 +61,7 @@ const HomeScreen = ({navigation}) => {
               foodName={item.foodName}
               restaurantName={item.restaurantName}
               restaurantAddress={item.restaurantAdress}
+              imageUrl={item.imageUrl}
               />} 
         />: 
         <View> 

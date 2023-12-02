@@ -3,12 +3,12 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import styles from "./todaysmenucard.style";
 
 const TodaysMenuCard = (props) => {
-  const { foodName, restaurantName, restaurantAddress } = props;
+  const { foodName, restaurantName, restaurantAddress, imageUrl } = props;
   return (
     <TouchableOpacity style={styles.container}>
       <TouchableOpacity style={styles.logoContainer}>
         <Image
-          src={"https://static.toiimg.com/thumb/53096628.cms?imgsize=104874&width=800&height=800"}
+          src={imageUrl}
           resizeMode='contain'
           style={styles.logImage}
         />
