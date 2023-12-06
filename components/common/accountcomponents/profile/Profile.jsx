@@ -1,5 +1,6 @@
 import { Image, Text, View } from "react-native";
 import styles from "./profile.style";
+import { auth } from "../../../../firebase/config";
 
 
 const Profile = () => { 
@@ -11,7 +12,7 @@ const Profile = () => {
                 style={styles.profileImage}
             />
             <Text style={styles.name}>
-                Yohannes A.
+                {auth.currentUser.displayName}
             </Text>
             <Text style={styles.city}>
                 Addis Ababa, Ethiopia

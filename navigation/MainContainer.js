@@ -9,6 +9,7 @@ import PastOrdersScreen from './screens/pastorders/PastOrdersScreen';
 import MapScreen from './screens/map/MapScreen';
 import ReferScreen from './screens/refer/ReferScreen';
 import AccountScreen from './screens/account/AccountScreen';
+import { useNavigation } from "@react-navigation/core";
 
 //Screen Names
 const homeScreenName = "Home";
@@ -20,6 +21,9 @@ const accountScreenName = "Account";
 const Tab = createBottomTabNavigator();
 
 function MainContainer() {
+
+    navigation = useNavigation();
+
   return (
     <NavigationContainer independent={true}>
         <Tab.Navigator
@@ -52,7 +56,7 @@ function MainContainer() {
             <Tab.Screen name={pastOrdersScreenName} component={PastOrdersScreen} />
             <Tab.Screen name={mapScreenName} component={MapScreen} />
             <Tab.Screen name={referScreenName} component={ReferScreen} />
-            <Tab.Screen name={accountScreenName} component={AccountScreen} />
+            <Tab.Screen name={accountScreenName} component={() => <AccountScreen navigation={navigation} />} />
         </Tab.Navigator>
     </NavigationContainer>
   )

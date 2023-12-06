@@ -6,8 +6,21 @@ import Profile from '../../../components/common/accountcomponents/profile/Profil
 import YourPlan from '../../../components/common/accountcomponents/yourplan/YourPlan'
 import IonIcons from 'react-native-vector-icons/Ionicons'
 import styles from './accountscreen.style'
+import { signOut } from 'firebase/auth'
+import { auth } from '../../../firebase/config'
 
-const AccountScreen = () => {
+const AccountScreen = ({ route, navigation }) => {
+
+  const handleSignOut = () => {
+    signOut(auth)
+    .then(() => {
+      navigation.replace("LoginScreen");
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+  }
+
   return (
     <ScrollView style={{ flex: 1, color:"gray" }}>
       <Stack.Screen options={{headerShown: false, statusBarColor:"#FFF" }} />
@@ -48,7 +61,7 @@ const AccountScreen = () => {
           </Text>
         <IonIcons name="chevron-forward-outline" size={24} color="gray" />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.touchableOpacity} >
+      <TouchableOpacity onPress={handleSignOut} style={styles.touchableOpacity} >
         <IonIcons name="log-out-outline" size={24} color="crimson" />
           <Text style={styles.text}>
             Log out
